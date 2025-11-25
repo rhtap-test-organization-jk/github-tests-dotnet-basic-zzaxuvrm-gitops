@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: github-tests-dotnet-basic-zzaxuvrm-gitops
+  description: This is GitOps manifest for github-tests-dotnet-basic-zzaxuvrm   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=github-tests-dotnet-basic-zzaxuvrm
+    backstage.io/kubernetes-id: github-tests-dotnet-basic-zzaxuvrm 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: github-tests-dotnet-basic-zzaxuvrm-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:github-tests-dotnet-basic-zzaxuvrm
